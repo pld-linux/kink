@@ -20,5 +20,5 @@ diff -aurN kink-0.2.1.orig/kink/kink.desktop kink-0.2.1/kink/kink.desktop
 -Comment[xx]=xxA simple KDE Applicationxx
 +Comment=Printer ink level utility monitor
 +Comment[pl]=Narzędzie monitorujące stan atramentu w drukarce
-+Categories=System;Utilities;
++Categories=System;Utility;
 +# vi: encoding=utf-8
