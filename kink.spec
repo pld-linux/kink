@@ -13,6 +13,7 @@ Source0:	http://dl.sourceforge.net/kink/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-compile_fix.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://kink.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	libinklevel-devel >= 0.6
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,6 +30,7 @@ Nak³adka graficzna na libinklevel dla KDE.
 %patch1 -p1
 
 %build
+cp -f /usr/share/automake/config.* admin
 %configure
 %{__make}
 
