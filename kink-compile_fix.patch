@@ -1,0 +1,57 @@
+diff -urN kink-0.2.1.orig/kink/kink.cpp kink-0.2.1/kink/kink.cpp
+--- kink-0.2.1.orig/kink/kink.cpp	2003-12-14 15:05:03 +0500
++++ kink-0.2.1/kink/kink.cpp	2004-01-04 18:29:48 +0500
+@@ -80,10 +80,10 @@
+ 		switch(callback)
+ 		{
+ 		  case OK:
+-			  add_device_to_list(PARPORT,i,level.model);
++			  add_device_to_list(PARPORT,i,(const char *)level.model);
+ 				break;
+ 			case PRINTER_NOT_SUPPORTED:
+-			  add_device_to_list(PARPORT,i,(unsigned char *)"Unsupported device");
++			  add_device_to_list(PARPORT,i,"Unsupported device");
+ 				break;
+ 		}
+ 	}
+@@ -95,10 +95,10 @@
+ 		switch(callback)
+ 		{
+ 		  case OK:
+-			  add_device_to_list(USB,i,level.model);
++			  add_device_to_list(USB,i,(const char *)level.model);
+ 				break;
+ 			case PRINTER_NOT_SUPPORTED:
+-			  add_device_to_list(USB,i,(unsigned char *)"Unsupported device");
++			  add_device_to_list(USB,i,"Unsupported device");
+ 				break;
+ 		}
+ 	}
+@@ -150,13 +150,13 @@
+     \fn KInk::add_device_to_list(void)
+ 		Add a device to the combo box list
+  */
+-void KInk::add_device_to_list(int type, int port, unsigned char *model)
++void KInk::add_device_to_list(int type, int port, const char *model)
+ {
+   listed_devices[listed_count].device_type = type;
+ 	listed_devices[listed_count].device_port = port;
+ 	++listed_count;
+ 
+-  cmbDevices->insertItem(QString::fromAscii((const char *)model,strlen(model)) + " on " + (type==PARPORT ? "/dev/lp" : "/dev/usb/lp") + QString::number(port));
++  cmbDevices->insertItem(QString::fromAscii(model,strlen(model)) + " on " + (type==PARPORT ? "/dev/lp" : "/dev/usb/lp") + QString::number(port));
+ }
+ 
+ 
+diff -urN kink-0.2.1.orig/kink/kink.h kink-0.2.1/kink/kink.h
+--- kink-0.2.1.orig/kink/kink.h	2003-12-14 15:05:03 +0500
++++ kink-0.2.1/kink/kink.h	2004-01-04 18:28:46 +0500
+@@ -67,7 +67,7 @@
+     DEVICE_INFO listed_devices[PARPORT_LAST_PORT + USB_LAST_PORT];
+ 
+ private:
+-    void add_device_to_list(int type, int port, unsigned char *model);
++    void add_device_to_list(int type, int port, const char *model);
+     void show_error(QString errStr);
+     void update_view(void);
+ };
