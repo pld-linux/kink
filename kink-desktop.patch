@@ -1,0 +1,24 @@
+diff -aurN kink-0.2.1.orig/kink/kink.desktop kink-0.2.1/kink/kink.desktop
+--- kink-0.2.1.orig/kink/kink.desktop	2003-12-14 11:05:03.000000000 +0100
++++ kink-0.2.1/kink/kink.desktop	2004-02-23 16:03:30.912242600 +0100
+@@ -1,15 +1,11 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=kink
+-Name[xx]=xxkinkxx
++Name[pl]=kink
+ Exec=kink
+ Icon=kink
+ Type=Application
+-Comment=A simple KDE Application
+-Comment[es]=Una aplicación de KDE sencilla
+-Comment[hu]=Egyszerű KDE-alkalmazás
+-Comment[pt]=Uma aplicação KDE simples
+-Comment[pt_BR]=Um simples Aplicativo do KDE
+-Comment[sl]=Preprost program za KDE
+-Comment[sv]=Ett enkelt KDE-program
+-Comment[xx]=xxA simple KDE Applicationxx
++Comment=Printer ink level utility monitor
++Comment[pl]=Narzędzie monitorujące stan atramentu w drukarce
++Categories=System;Utilities;
++# vi: encoding=utf-8
