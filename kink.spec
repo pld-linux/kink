@@ -5,7 +5,7 @@ Summary:	KDE printer ink level utility monitor
 Summary(pl):	Narzêdzie monitoruj±ce stan atramentu w drukarce dla KDE
 Name:		kink
 Version:	0.2.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kink/%{name}-%{version}.tar.bz2
