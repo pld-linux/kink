@@ -41,7 +41,7 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 mv $RPM_BUILD_ROOT%{_applnkdir}/Utilities/kink.desktop \
     $RPM_BUILD_ROOT%{_desktopdir}/kde
 
-echo "Categories=Qt;KDE;Utilities" >> \
+echo "Categories=Qt;KDE;Utilities;" >> \
         $RPM_BUILD_ROOT%{_desktopdir}/kde/kink.desktop
     
 %clean
