@@ -11,6 +11,7 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kink/%{name}-%{version}.tar.bz2
 # Source0-md5:	4a2341eb6d457e6a4b1409b45a673214
 Patch0:		%{name}-compile_fix.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://kink.sourceforge.net/
 BuildRequires:	libinklevel-devel >= 0.6
 BuildRequires:	kdelibs-devel >= 3.1
@@ -25,6 +26,7 @@ Nak³adka graficzna na libinklevel dla KDE.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure
@@ -32,18 +34,11 @@ Nak³adka graficzna na libinklevel dla KDE.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	kde_appsdir=%{_applnkdir}
-
-mv $RPM_BUILD_ROOT%{_applnkdir}/Utilities/kink.desktop \
-    $RPM_BUILD_ROOT%{_desktopdir}/kde
-
-echo "Categories=Qt;KDE;Utilities;" >> \
-        $RPM_BUILD_ROOT%{_desktopdir}/kde/kink.desktop
-    
+	shelldesktopdir=%{_desktopdir}/kde
+	
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -54,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/apps/kink
 %{_datadir}/apps/kink/*.rc
 %{_desktopdir}/kde/*.desktop
-%{_iconsdir}/hicolor/*/apps/kink.png
+%{_iconsdir}/*/*/apps/kink.png
