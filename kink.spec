@@ -14,8 +14,8 @@ Patch0:		%{name}-compile_fix.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://kink.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	libinklevel-devel >= 0.6
 BuildRequires:	kdelibs-devel >= 3.1
+BuildRequires:	libinklevel-devel >= 0.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	shelldesktopdir=%{_desktopdir}/kde
-	
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
