@@ -2,7 +2,7 @@
 # - review by KDE specialist needed (BRs, dirs)
 #
 Summary:	KDE printer ink level utility monitor
-Summary(pl):	Narzêdzie monitoruj±ce stan atramentu w drukarce dla KDE
+Summary(pl.UTF-8):   NarzÄ™dzie monitorujÄ…ce stan atramentu w drukarce dla KDE
 Name:		kink
 Version:	0.2.1
 Release:	2
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A KDE frontend for libinklevel.
 
-%description -l pl
-Nak³adka graficzna na libinklevel dla KDE.
+%description -l pl.UTF-8
+NakÅ‚adka graficzna na libinklevel dla KDE.
 
 %prep
 %setup -q
