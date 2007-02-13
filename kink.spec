@@ -2,7 +2,7 @@
 # - review by KDE specialist needed (BRs, dirs)
 #
 Summary:	KDE printer ink level utility monitor
-Summary(pl.UTF-8):   Narzędzie monitorujące stan atramentu w drukarce dla KDE
+Summary(pl.UTF-8):	Narzędzie monitorujące stan atramentu w drukarce dla KDE
 Name:		kink
 Version:	0.2.1
 Release:	2
